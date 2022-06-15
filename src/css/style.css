@@ -11966,7 +11966,6 @@ fieldset:disabled .btn {
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #f3f6f7;
 }
 
 a {
@@ -12406,7 +12405,13 @@ header .right__notification-icon a {
   display: block;
 }
 
+.summary-status__tab__container {
+  border-bottom: 2px solid #e4e4e4;
+  padding-bottom: 1rem;
+}
+
 .summary-status__tab__container li {
+  position: relative;
   display: inline-block;
   margin-right: 15px;
   font-size: 16px;
@@ -12415,8 +12420,42 @@ header .right__notification-icon a {
   text-transform: capitalize;
 }
 
+.summary-status__tab__container li::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #2b00d4;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  bottom: -1.125rem;
+}
+
 .summary-status__tab__container li.status-tab__list--active {
   color: #2b00d4;
+}
+
+.summary-status__tab__container li.status-tab__list--active::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.status-tab__content {
+  display: none;
+}
+
+.status-tab__content--active {
+  display: block;
 }
 
 .main {
@@ -12643,6 +12682,7 @@ header .right__notification-icon a {
           box-shadow: rgba(149, 157, 165, 0.2) 0px 20px 30px;
   background-color: #fff;
   border-radius: 25px;
+  height: 500px;
 }
 
 .main__content main .summary .activity__summary .activity__list {
@@ -12698,8 +12738,73 @@ header .right__notification-icon a {
           box-shadow: rgba(149, 157, 165, 0.2) 0px 20px 30px;
   background-color: #fff;
   border-radius: 25px;
-  height: 473px;
+  height: 500px;
   padding: 1rem 1.7rem;
+}
+
+.main__content main .summary .summary-status .status-data__date p {
+  font-size: 14px;
+  color: #797777;
+  font-weight: 700;
+}
+
+.main__content main .summary .summary-status .status-data table tbody td.all-category {
+  width: 28% !important;
+}
+
+.main__content main .summary .summary-status .status-type .status {
+  font-size: 14px;
+  color: #000;
+  font-weight: 700;
+}
+
+.main__content main .summary .summary-status .status-type p {
+  font-size: 10px;
+  color: #797777;
+}
+
+.main__content main .summary .summary-status .attach {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  line-height: 30px;
+  color: #797777;
+  text-align: center;
+  font-size: 20px;
+  background-color: #e4e4e4;
+  border-radius: 3px;
+}
+
+.main__content main .summary .summary-status .rate {
+  font-size: 14px;
+  color: #000;
+  font-weight: 700;
+}
+
+.main__content main .summary .summary-status .status-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  font-size: 10px;
+  color: #000;
+  font-weight: 600;
+}
+
+.main__content main .summary .summary-status .status-category span {
+  display: inline-block;
+  margin-right: 10px;
+  height: 25px;
+  width: 25px;
+  line-height: 30px;
+  border-radius: 50%;
+  background-color: red;
+  border: 10px solid #f3ebeb;
 }
 
 .main__content aside {
@@ -12854,12 +12959,7 @@ header .right__notification-icon a {
   width: 100%;
   background-color: #fff;
   border-radius: 15px;
-  margin-right: 15px;
   padding: 1rem;
-}
-
-.main__content aside .sidebar__content .favourite-cards__block:last-child {
-  margin-right: 0;
 }
 
 .main__content aside .sidebar__content .favourite-cards__block .currency {
@@ -12873,9 +12973,9 @@ header .right__notification-icon a {
 
 .main__content aside .sidebar__content .favourite-cards__block .currency__icon {
   display: inline-block;
-  height: 40px;
-  width: 40px;
-  line-height: 45px;
+  height: 35px;
+  width: 35px;
+  line-height: 40px;
   text-align: center;
   border-radius: 50%;
   background-color: #000;
@@ -12883,7 +12983,7 @@ header .right__notification-icon a {
 }
 
 .main__content aside .sidebar__content .favourite-cards__block .currency__info {
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .main__content aside .sidebar__content .favourite-cards__block .currency__info p {

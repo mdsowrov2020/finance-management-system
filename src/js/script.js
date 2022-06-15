@@ -37,3 +37,32 @@ tab_container.addEventListener('click', function (e) {
     .querySelector(`.tab__content--${clicked.dataset.tab}`)
     .classList.add('tab__content--active');
 });
+
+// Summary status tab
+
+const status_tab_list = document.querySelectorAll('.status-tab__list');
+const status_tab_container = document.querySelector(
+  '.summary-status__tab__container'
+);
+const status_tab_content = document.querySelectorAll('.status-tab__content');
+
+status_tab_container.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.status-tab__list');
+
+  if (!clicked) return;
+
+  status_tab_list.forEach((t) =>
+    t.classList.remove('status-tab__list--active')
+  );
+  clicked.classList.add('status-tab__list--active');
+
+  status_tab_content.forEach((c) =>
+    c.classList.remove('status-tab__content--active')
+  );
+
+  //Active content
+
+  document
+    .querySelector(`.status-tab__content--${clicked.dataset.tab}`)
+    .classList.add('status-tab__content--active');
+});

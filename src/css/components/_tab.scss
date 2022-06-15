@@ -20,12 +20,39 @@
 // summary status tab start
 
 .summary-status__tab__container{
+    border-bottom: 2px solid $gray-light;
+    padding-bottom: 1rem;
    li{
+    position: relative;
     @include tabContainerList();
     text-transform: capitalize;
+    &::after{
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $theme-color;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform .5s;
+        bottom: -1.125rem;
+    }
     &.status-tab__list--active{
         color: $theme-color;
+        &::after{
+            transform: scaleX(1);
+            transform-origin: left;
+        }
     }
    }
+}
+
+.status-tab__content{
+    display: none;
+    &--active{
+        display: block;
+    }
 }
 
