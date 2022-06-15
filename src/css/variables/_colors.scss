@@ -1,0 +1,16 @@
+$body-color:rgb(243, 246, 247);
+$theme-color: #2b00d4;
+$text-regular: rgb(25, 25, 25);
+$text-lighter:rgb(121, 119, 119);
+$white: #fff;
+$black: #000;
+$orange-light:rgb(255, 204, 126);
+$gray-light:rgb(228, 228, 228);
+
+
+$coin-colors:(
+    bitcoin : $black,
+    litecoin:$theme-color,
+    binance:rgb(114, 242, 200),
+    etherum:#f36d39
+)

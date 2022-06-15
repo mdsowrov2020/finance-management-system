@@ -1,0 +1,31 @@
+.tab__container{
+    li{
+        @include tabContainerList();
+        color: $text-lighter;
+        &.tab__list--active{
+            font-weight: 700;
+            color: $black;
+        }
+    }
+}
+
+.tab__content{
+    display: none;
+    &--active{
+        display: block;
+    }
+}
+
+
+// summary status tab start
+
+.summary-status__tab__container{
+   li{
+    @include tabContainerList();
+    text-transform: capitalize;
+    &.status-tab__list--active{
+        color: $theme-color;
+    }
+   }
+}
+

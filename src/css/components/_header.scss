@@ -1,0 +1,186 @@
+
+
+header{
+          width: 100%;
+    @include flexCenter(space-between);
+    border-bottom: 1px solid $gray-light;;
+    padding: 1rem 1.7rem;
+
+    .left-block{
+        @include flexCenter(space-between);
+        &__brand{
+            a{
+                font-size: 20px;
+            font-weight: 700;
+            color: rgb(27, 27, 27);
+                text-decoration: none;
+            }
+        }
+
+    }
+
+    .right{
+        @include flexCenter(space-between);
+        &__user{
+            position: relative;
+         
+            margin-right: 30px;
+            @include flexCenter(space-between);
+            span{
+                margin-left: 15px;
+                display: inline-block;
+                height: 45px;
+                width: 45px;
+                border-radius: 10px;
+                background-color: #2b00d4;
+                color: #fff;
+                line-height: 50px;
+                text-align: center;
+                font-size: 22px;
+            font-weight: 700;
+            }
+        }
+        &__notification{
+
+            @include flexCenter(space-between);
+            position: relative;
+            .user-block{
+          
+                // top: 0;
+                    width: 80px;
+                    height: 45px;
+                    transition: .7s all;
+                    &.user-block--active{
+                        width: auto;
+                        height: auto;
+                        transition: width 0.5s, height 0.5s, backdrop-filter 1s, background-color 0.78s,padding 1.7s;
+                        transition-delay: 0s, 0.75s;
+                        background-color: rgba(255,255,255,.8);
+                        backdrop-filter: blur(25px);
+                        -webkit-backdrop-filter: blur(25px);
+                        position: absolute;
+                        z-index: 999;
+                        right: 100%;
+                        top: 0;
+                        box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+                        @include commonPadding();
+                        border-radius: 20px;
+                        .user-block__dropdown{
+                            // width: calc(100% - 60px);
+                            transition: .7s all;
+                            transition-delay: 1s;
+                            .user-image{
+                                margin-right: 15px;
+                            }
+                            .user-dropdown__toggle{
+                                transform: rotate(-180deg);
+                                transition: .7s;
+                            }
+                        }
+                        .username{
+                            transform: scaleX(1);
+                            width: auto;
+                            transition: transform 1s;
+                        }
+        
+                        .dropdown-items{
+                            height: calc(100% - 45px);
+                           transform: scale(1);
+                           transform-origin: right;
+                            visibility: visible;
+                            transition: width 0.7s, height 0.7s, transform 0.7s;
+                            transition-delay: 0s, 0.8s;
+                        
+                        }
+                    }
+                    &__dropdown{
+                     
+                       @include flexCenter(space-between);
+                   
+                        transition: .7s all;
+                        transition-delay: 0.5s;
+                        .user-image{
+                        
+                            min-width: 45px;
+                            height: 45px;
+                            background: white;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            img{
+                   
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .username{
+                            font-size: 1.2rem;
+                            white-space: nowrap;
+                            color: gray;
+                            transform: scaleX(0);
+                            width: 0;
+                            transform-origin: right;
+                            transition: .7s all;
+                        }
+                        .user-dropdown__toggle{
+                            width: 45px;
+                            height: 45px;
+                            text-align: center;
+                            line-height: 50px;
+                            cursor: pointer;
+                            font-size: 16px;
+                            font-weight: 700;
+                            color: $text-regular;
+                            transition: .7s all;
+                        }
+                    }
+                
+                    .dropdown-items{
+                        // position: absolute;
+                        width: 100%;
+                        // height: 60px;
+                        // height: calc(100% - 60px);
+                        height: 0;
+                        transform: scale(0);
+                        visibility: hidden;
+                        margin-top: 15px;
+                        transition: .7s all;
+                        // padding: 20px;
+                   
+                        // border-top: 1px solid rgba(0, 0, 0, 0.1);
+                        z-index: 99;
+                        li{
+                            a{
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+                                margin: 20px 0;
+                                font-size: 1rem;
+                                text-decoration: none;
+                                color: $text-regular;
+                            }
+                        }
+                    }
+                  }
+ 
+            &-icon{
+                a{
+                    font-size: 20px;
+                    font-weight: 700;
+                    height: 40px;
+                    width: 40px;
+                    line-height: 45px;
+                    text-align: center;
+                    display: inline-block;
+                    border-radius: 50%;
+                    background-color: #2b00d4;
+                    margin: 0 5px;
+                    color: rgb(255, 255, 255);
+            
+                }
+            }
+        }
+    }
+}

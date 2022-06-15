@@ -1,0 +1,35 @@
+@mixin flexCenter($justify_content) {
+display: flex;
+align-items: center;
+justify-content: $justify_content;
+}
+
+@mixin commonPadding {
+    padding: 1rem 1.7rem;
+}
+
+
+// Common tab mixins
+
+@mixin tabContainerList {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+} 
+
+
+// Responsive mixins
+
+@mixin smallDevice {
+    @media(max-width: #{$small}){
+        @content
+    }
+}
+
+@mixin mobile{
+    @media(min-width: #{$small}) and (max-width: #{$mobile}){
+        @content
+    }
+}
